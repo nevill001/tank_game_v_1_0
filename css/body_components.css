@@ -1,0 +1,33 @@
+body {
+  overflow-y: hidden;
+}
+
+.section_inline_flex {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  align-items: center;
+  width: 100vw;
+}
+
+.left_section {
+  width: 25vw;
+  height: var(--body_height);
+  background-color: var(--color_menu);
+}
+
+.canvas_section {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75vw;
+  /* background-color: var(--color_menu_component); */
+}
+
+.canvas {
+  width: 600px;
+  height: 600px;
+  background-color: var(--color_canvas);
+}

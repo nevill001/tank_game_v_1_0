@@ -1,0 +1,14 @@
+:root {
+  --menu_height: 8vh;
+  --body_height: 88vh;
+  --footer_height: 4vh;
+  --min_width: 80vw;
+  --max_width: 100vw;
+  --color_sections: #252227;
+  --color_menu: #483d8b;
+  --color_menu_component: #9370db;
+  --color_shadow: #ffffff;
+  --color_font2: #fffff0;
+  --inactive_font: #c0c0c0;
+  --color_canvas: #daa520;
+}

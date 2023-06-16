@@ -1,0 +1,90 @@
+.main_section {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#main2 {
+  display: none;
+  overflow: scroll;
+  margin-top: var(--menu_height);
+  margin-bottom: var(--footer_height);
+  min-width: var(--min_width);
+  max-width: var(--max_width);
+  min-height: var(--body_height);
+  background-color: var(--color_sections);
+}
+#main3 {
+  display: none;
+  overflow: scroll;
+  margin-top: var(--menu_height);
+  margin-bottom: var(--footer_height);
+  min-width: var(--min_width);
+  max-width: var(--max_width);
+  min-height: var(--body_height);
+  background-color: var(--color_sections);
+}
+#main4 {
+  display: none;
+  overflow: scroll;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--menu_height);
+  margin-bottom: var(--footer_height);
+  min-width: var(--min_width);
+  max-width: var(--max_width);
+  min-height: var(--body_height);
+  background-color: var(--color_sections);
+}
+#main5 {
+  display: none;
+  overflow: scroll;
+  margin-top: var(--menu_height);
+  margin-bottom: var(--footer_height);
+  min-width: var(--min_width);
+  max-width: var(--max_width);
+  min-height: var(--body_height);
+  background-color: var(--color_sections);
+}
+#main6 {
+  display: none;
+  overflow: scroll;
+  margin-top: var(--menu_height);
+  margin-bottom: var(--footer_height);
+  min-width: var(--min_width);
+  max-width: var(--max_width);
+  min-height: var(--body_height);
+  background-color: var(--color_sections);
+}
+#main7 {
+  display: none;
+  overflow: scroll;
+  margin-top: var(--menu_height);
+  margin-bottom: var(--footer_height);
+  min-width: var(--min_width);
+  max-width: var(--max_width);
+  min-height: var(--body_height);
+  background-color: var(--color_sections);
+}
+#main8 {
+  display: none;
+  overflow: scroll;
+  margin-top: var(--menu_height);
+  margin-bottom: var(--footer_height);
+  min-width: var(--min_width);
+  max-width: var(--max_width);
+  min-height: var(--body_height);
+  background-color: var(--color_sections);
+}
+#main9 {
+  display: none;
+  overflow: scroll;
+  margin-top: var(--menu_height);
+  margin-bottom: var(--footer_height);
+  min-width: var(--min_width);
+  max-width: var(--max_width);
+  min-height: var(--body_height);
+  background-color: var(--color_sections);
+}

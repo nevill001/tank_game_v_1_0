@@ -1,0 +1,15 @@
+.footer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color_menu);
+  width: 100vw;
+  height: var(--footer_height);
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+}
+
+.footer_text {
+  color: var(--color_font2);
+}
