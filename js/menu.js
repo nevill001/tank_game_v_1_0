@@ -52,7 +52,7 @@ export class Menu {
         string = this.array[i][0];
       }
       if (string instanceof Object && !Array.isArray(string)) {
-        string = string.name;
+        string = string.header;
       }
       this.context.fillText(string, 200, 220 + this.menu_step * i);
       this.context.fillStyle = "black";
@@ -79,7 +79,7 @@ export class Menu {
       }
       if (elem instanceof Object && !Array.isArray(elem)) {
         if (elem.name == "game") {
-          this.tank_game();
+          this.tank_game(elem.level, elem.limit);
         }
       }
     }
@@ -94,8 +94,17 @@ export class Menu {
   get_menu() {
     return [
       "Main menu",
-      ["Nested Menu", "Cheker1", "Cheker2"],
-      { name: "game", program: this.tank_game },
+      [
+        "GAME -->",
+        { name: "game", header: "level_1", level: 1, limit: 4 },
+        { name: "game", header: "level_2", level: 2, limit: 5 },
+        { name: "game", header: "level_3", level: 3, limit: 6 },
+        { name: "game", header: "level_4", level: 4, limit: 7 },
+        { name: "game", header: "level_5", level: 5, limit: 8 },
+        { name: "game", header: "level_6", level: 6, limit: 9 },
+        { name: "game", header: "level_7", level: 7, limit: 10 },
+      ],
+      "pop",
     ];
   }
 
@@ -103,8 +112,8 @@ export class Menu {
     cancelAnimationFrame(this.animation_game_over);
   }
 
-  tank_game() {
+  tank_game(level, limit) {
     this.menu_switcher = false;
-    this.game = new Game(this);
+    this.game = new Game(this, level, limit);
   }
 }

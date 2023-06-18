@@ -1,12 +1,13 @@
-export class Block1 {
+export class Spauner {
   constructor(x, y, context, scale) {
     this.x = x;
     this.y = y;
     this.context = context;
     this.scale = scale;
     this.radius = this.scale / 2;
-    this.color_1 = "#808080";
-    this.color_2 = "#A9A9A9";
+    this.health = 10;
+    this.color_1 = "#7B68EE";
+    this.color_2 = "#1E90FF";
   }
   draw() {
     this.context.strokeStyle = this.color_1;
@@ -22,20 +23,8 @@ export class Block1 {
     this.context.fill();
     this.context.stroke();
   }
-}
 
-export class Block2 extends Block1 {
-  constructor(x, y, context, scale) {
-    super(x, y, context, scale);
-    this.color_1 = "#DC143C";
-    this.color_2 = "#CD5C5C";
-  }
-}
-
-export class Block3 extends Block1 {
-  constructor(x, y, context, scale) {
-    super(x, y, context, scale);
-    this.color_1 = "#2F4F4F";
-    this.color_2 = "#000000";
+  hit() {
+    this.health--;
   }
 }

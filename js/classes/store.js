@@ -1,5 +1,6 @@
 import { distanceBeetwenTwoPoints } from "../utils/distance.js";
 import { ProjectTile } from "./projectTile.js";
+import { TypeA } from "./enemy_type_a.js";
 
 export class Store {
   constructor(main) {
@@ -7,21 +8,33 @@ export class Store {
     this.context = this.main.context;
     this.scale = this.main.game_scale;
     this.projectTile = [];
-    this.enamy = [];
+    this.enemy = [];
+    this.spauners = [];
+    this.enemy_limit = this.main.enemy_limit;
+  }
+
+  spawn_enemies() {
+    if (this.main.delay % 400 == 0) {
+      if (this.enemy.length < this.enemy_limit) {
+        let index = Math.floor(Math.random() * this.spauners.length);
+        let object = this.spauners[index];
+        this.enemy.push(new TypeA(this, object.x, object.y));
+      }
+    }
   }
 
   add_project_tile(x, y, direct) {
     if (direct == 0) {
-      y -= 0.3;
+      y -= 0.5;
     }
     if (direct == 1) {
-      y += 0.3;
+      y += 0.5;
     }
     if (direct == 2) {
-      x -= 0.3;
+      x -= 0.5;
     }
-    if (direct == 2) {
-      x += 0.3;
+    if (direct == 3) {
+      x += 0.5;
     }
     this.projectTile.push(
       new ProjectTile(
@@ -46,18 +59,64 @@ export class Store {
         return;
       }
     });
+    this.enemy.forEach((elem) => {
+      let distance = distanceBeetwenTwoPoints(
+        item.x,
+        item.y,
+        elem.x * this.scale,
+        elem.y * this.scale
+      );
+      if (distance < 10) {
+        elem.hit();
+        this.projectTile.splice(index, 1);
+        return;
+      }
+    });
+    this.spauners.forEach((elem) => {
+      let distance = distanceBeetwenTwoPoints(
+        item.x,
+        item.y,
+        elem.x * this.scale,
+        elem.y * this.scale
+      );
+      if (distance < 10) {
+        elem.hit();
+        this.projectTile.splice(index, 1);
+        return;
+      }
+    });
+
+    let player_dist = distanceBeetwenTwoPoints(
+      item.x,
+      item.y,
+      this.main.player.x * this.scale,
+      this.main.player.y * this.scale
+    );
+    if (player_dist < 10) {
+      this.main.player.hit();
+      this.projectTile.splice(index, 1);
+      console.log(this.main.player.health);
+    }
   }
 
   update() {
+    this.enemy = this.enemy.filter((elem) => elem.health > 0);
+    this.spauners = this.spauners.filter((elem) => elem.health > 0);
     let index = 0;
     this.projectTile.forEach((elem) => {
       elem.update();
       this.check_project_tile(elem, index);
       index++;
     });
+    this.enemy.forEach((elem) => {
+      elem.update();
+    });
+    this.spawn_enemies();
   }
 
   draw() {
     this.projectTile.forEach((elem) => elem.draw());
+    this.enemy.forEach((elem) => elem.draw());
+    this.spauners.forEach((elem) => elem.draw());
   }
 }

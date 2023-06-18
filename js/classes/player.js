@@ -11,10 +11,10 @@ const ALL_MOOVE_KEY_CODES = [
 ];
 
 export class Player {
-  constructor(main, x, y) {
+  constructor(main) {
     this.main = main;
-    this.x = x;
-    this.y = y;
+    this.x = this.main.map.player_pos[0];
+    this.y = this.main.map.player_pos[1];
     this.context = this.main.context;
     this.scale = this.main.game_scale;
     /**/
