@@ -11,10 +11,11 @@ export class Store {
     this.enemy = [];
     this.spauners = [];
     this.enemy_limit = this.main.enemy_limit;
+    this.speed_game = this.main.speed;
   }
 
   spawn_enemies() {
-    if (this.main.delay % 400 == 0) {
+    if (this.main.delay % this.speed_game == 0) {
       if (this.enemy.length < this.enemy_limit) {
         let index = Math.floor(Math.random() * this.spauners.length);
         let object = this.spauners[index];
@@ -116,7 +117,7 @@ export class Store {
 
   draw() {
     this.projectTile.forEach((elem) => elem.draw());
-    this.enemy.forEach((elem) => elem.draw());
     this.spauners.forEach((elem) => elem.draw());
+    this.enemy.forEach((elem) => elem.draw());
   }
 }

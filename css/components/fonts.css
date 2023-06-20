@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+.font_motstserrat_h1 {
+  padding: 10px;
+  margin: 10px;
+  font-family: "Montserrat", sans-serif;
+  color: var(--color_text1_h1);
+  font-size: 38px;
+  text-align: center;
+}
+
+.font_text {
+  padding: 10px;
+  margin: 10px;
+  max-width: 700px;
+  font-family: "Montserrat", sans-serif;
+  color: var(--color_text1);
+  font-size: 22px;
+  text-align: justify;
+  text-indent: 50px;
+  letter-spacing: 3px;
+  line-height: 32px;
+}
+
+.text_under_screen {
+  padding: 10px;
+  margin: 10px;
+  max-width: 1200px;
+  font-family: "Montserrat", sans-serif;
+  color: var(--color_text1);
+  font-size: 20px;
+  text-align: justify;
+  text-indent: 40px;
+  letter-spacing: 2px;
+  line-height: 30px;
+}

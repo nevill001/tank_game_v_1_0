@@ -79,7 +79,7 @@ export class Menu {
       }
       if (elem instanceof Object && !Array.isArray(elem)) {
         if (elem.name == "game") {
-          this.tank_game(elem.level, elem.limit);
+          this.tank_game(elem.level, elem.limit, elem.speed);
         }
       }
     }
@@ -96,13 +96,13 @@ export class Menu {
       "Main menu",
       [
         "GAME -->",
-        { name: "game", header: "level_1", level: 1, limit: 4 },
-        { name: "game", header: "level_2", level: 2, limit: 5 },
-        { name: "game", header: "level_3", level: 3, limit: 6 },
-        { name: "game", header: "level_4", level: 4, limit: 7 },
-        { name: "game", header: "level_5", level: 5, limit: 8 },
-        { name: "game", header: "level_6", level: 6, limit: 9 },
-        { name: "game", header: "level_7", level: 7, limit: 10 },
+        { name: "game", header: "level_1", level: 1, limit: 4, speed: 400 },
+        { name: "game", header: "level_2", level: 2, limit: 5, speed: 400 },
+        { name: "game", header: "level_3", level: 3, limit: 6, speed: 400 },
+        { name: "game", header: "level_4", level: 4, limit: 7, speed: 300 },
+        { name: "game", header: "level_5", level: 5, limit: 8, speed: 300 },
+        { name: "game", header: "level_6", level: 6, limit: 9, speed: 200 },
+        { name: "game", header: "level_7", level: 7, limit: 10, speed: 100 },
       ],
       "pop",
     ];
@@ -112,8 +112,8 @@ export class Menu {
     cancelAnimationFrame(this.animation_game_over);
   }
 
-  tank_game(level, limit) {
+  tank_game(level, limit, speed) {
     this.menu_switcher = false;
-    this.game = new Game(this, level, limit);
+    this.game = new Game(this, level, limit, speed);
   }
 }

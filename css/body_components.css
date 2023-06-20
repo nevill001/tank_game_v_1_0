@@ -1,5 +1,42 @@
-body {
+/* body {
   overflow-y: hidden;
+} */
+
+.section_colomn_flex {
+  margin-top: 10px;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
+
+.screen_image {
+  width: 720px;
+  height: 480px;
+  background-color: var(--color_shadow);
+  padding: 2px;
+  margin: 20px;
+}
+
+.screen_image:hover {
+  width: 900px;
+  height: 600px;
+  padding: 0px;
+  box-shadow: 5px 5px 10px black, -5px -5px 10px black;
+}
+
+.round_image {
+  max-width: 500px;
+  max-height: 500px;
+  border-radius: 50%;
+  padding: 2px;
+  background-color: white;
+  box-shadow: -4px -4px rgba(255, 253, 253, 0.1),
+    -4px 4px rgba(255, 253, 253, 0.1), 4px -4px rgba(255, 253, 253, 0.1),
+    4px 4px rgba(255, 253, 253, 0.1);
 }
 
 .section_inline_flex {

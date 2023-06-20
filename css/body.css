@@ -1,3 +1,8 @@
+.root_section {
+  padding-top: var(--menu_height);
+  padding-bottom: var(--footer_height);
+}
+
 .main_section {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8,9 +13,7 @@
 
 #main2 {
   display: none;
-  overflow: scroll;
-  margin-top: var(--menu_height);
-  margin-bottom: var(--footer_height);
+  overflow-y: scroll;
   min-width: var(--min_width);
   max-width: var(--max_width);
   min-height: var(--body_height);
@@ -19,8 +22,7 @@
 #main3 {
   display: none;
   overflow: scroll;
-  margin-top: var(--menu_height);
-  margin-bottom: var(--footer_height);
+
   min-width: var(--min_width);
   max-width: var(--max_width);
   min-height: var(--body_height);
@@ -28,11 +30,10 @@
 }
 #main4 {
   display: none;
-  overflow: scroll;
+  overflow: hidden;
+  overflow-y: hidden;
   align-items: center;
   justify-content: center;
-  margin-top: var(--menu_height);
-  margin-bottom: var(--footer_height);
   min-width: var(--min_width);
   max-width: var(--max_width);
   min-height: var(--body_height);
@@ -40,9 +41,7 @@
 }
 #main5 {
   display: none;
-  overflow: scroll;
-  margin-top: var(--menu_height);
-  margin-bottom: var(--footer_height);
+  overflow-y: scroll;
   min-width: var(--min_width);
   max-width: var(--max_width);
   min-height: var(--body_height);
@@ -51,8 +50,7 @@
 #main6 {
   display: none;
   overflow: scroll;
-  margin-top: var(--menu_height);
-  margin-bottom: var(--footer_height);
+
   min-width: var(--min_width);
   max-width: var(--max_width);
   min-height: var(--body_height);
@@ -61,8 +59,7 @@
 #main7 {
   display: none;
   overflow: scroll;
-  margin-top: var(--menu_height);
-  margin-bottom: var(--footer_height);
+
   min-width: var(--min_width);
   max-width: var(--max_width);
   min-height: var(--body_height);
@@ -71,8 +68,7 @@
 #main8 {
   display: none;
   overflow: scroll;
-  margin-top: var(--menu_height);
-  margin-bottom: var(--footer_height);
+
   min-width: var(--min_width);
   max-width: var(--max_width);
   min-height: var(--body_height);
@@ -81,8 +77,7 @@
 #main9 {
   display: none;
   overflow: scroll;
-  margin-top: var(--menu_height);
-  margin-bottom: var(--footer_height);
+
   min-width: var(--min_width);
   max-width: var(--max_width);
   min-height: var(--body_height);

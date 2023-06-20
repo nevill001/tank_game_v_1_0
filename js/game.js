@@ -4,7 +4,7 @@ import { Maps } from "./levels/map.js";
 import { A_Star } from "./utils/dejkstra_a_star.js";
 
 export class Game {
-  constructor(main, level, limit) {
+  constructor(main, level, limit, speed) {
     this.main = main;
     this.context = main.context;
     this.widht = main.screen_width;
@@ -15,6 +15,7 @@ export class Game {
     this.delay = 0;
     this.delay_limit = 1000;
     this.enemy_limit = limit;
+    this.speed = speed;
     this.init();
   }
 

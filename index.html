@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My project</title>
-    collision_map
     <link rel="stylesheet" href="./main.css" />
   </head>
   <body>
@@ -40,8 +39,26 @@
         </li>
       </ul>
     </div>
-    <section class="main_section">
-      <section class="main_section" id="main2"></section>
+    <section class="root_section">
+      <section class="main_section" id="main2">
+        <section class="section_colomn_flex">
+          <img src="./img/foto/foto.jpg" class="round_image" alt="pict" />
+          <h1 class="font_motstserrat_h1">Dmytro Svintsov</h1>
+          <p class="font_text">
+            <b>
+              I am liaving in Prague (Chech republick). I am working in
+              AutoKelly main storage. I am learning programming. I like crecte
+              different computer games. I like use hard algoritms.
+            </b>
+          </p>
+          <a
+            href="https://www.facebook.com/profile.php?id=100070749842682"
+            class="button_1"
+            target="_blank"
+            ><span>my fbook</span></a
+          >
+        </section>
+      </section>
       <section class="main_section" id="main3"></section>
       <section class="main_section" id="main4">
         <section class="section_inline_flex">
@@ -51,11 +68,136 @@
           </section>
         </section>
       </section>
-      <section class="main_section" id="main5"></section>
-      <section class="main_section" id="main6"></section>
-      <section class="main_section" id="main7"></section>
-      <section class="main_section" id="main8"></section>
-      <section class="main_section" id="main9"></section>
+      <section class="main_section" id="main5">
+        <section class="section_colomn_flex">
+          <h1 class="font_motstserrat_h1">ОБ ИГРОВОМ МЕНЮ:</h1>
+          <img src="./img/foto/menu.jpg" class="screen_image" alt="screen" />
+
+          <p class="text_under_screen">
+            <b
+              >Выше скрин из пайтона. Алгоритм меню я придумал сам. За идею
+              взял, что нажимаея на клавиши мы прибавляем если двигаемся вверх
+              или отнимае, если двигаемся вниз - еденицу у счетчика перемещения
+              внутри текущего меню
+              <div class=""></div>
+            </b>
+          </p>
+          <p class="text_under_screen">
+            <b
+              >А само меню представляет собой оттедельный клас, который создаеся
+              при запуске программы. В случаее текущего проэкта я создавал класс
+              меню при нажатии на клавишу с определенным айди.
+            </b>
+          </p>
+          <p class="text_under_screen">
+            <b
+              >Для самого меню я создаю список по определенным правилам!!
+              Например для пайтона для меню которое может запускать три
+              программы я создал такой список
+            </b>
+          </p>
+          <p class="text_under_screen">
+            <b>
+              def __get_menu_list(self): return ['Главное меню:', ['Поиск пути',
+              {'Алгоритм поиска пути в ширину': self.program_pathfinder},
+              {'Алгоритм Dejstra': self.program_dejctra}, {'Алгоритм А*':
+              self.a_manhatten}], {'Выход': self.__quit}]</b
+            >
+          </p>
+          <p class="text_under_screen">
+            <b
+              >В моем алгоритме все просто, надо придерживатся правил: первый
+              элемент списка - всегда его оглавление если список отображается, и
+              если это встроенное меню, как в приме выше, то этот элемент
+              отображается как элемент текушего списка, в словаре или объекте js
+              я храню саму программу, точнее такой пример {name: 'Pogram',
+              progran: 'this.program', difficult: 'other paramenters of
+              program'}. Как видите при нажатии клавиши ввод когда наш счетчик
+              совпадает с элементом списка, мы запускаем программу, которая тоже
+              является элементом класса. Есди же это списко то мы переходим в
+              другое меню. Вложенных меню может быть очень много - сколько
+              хотите.... При нажатии на клавишу сброса я вызываю возврат в
+              главное меню, или если мы находимся в программе, то главная
+              программы запросит разрешение на выход, как в скрине внизу
+            </b>
+          </p>
+          <img src="./img/foto/menu_2.jpg" class="screen_image" />
+          <p class="text_under_screen">
+            <b>
+              Все это рендеретися методом класса,.... и к этому я не просто так
+              пришел. Вначале были меню попроще, где использовал запрещенный
+              метод eval . Незнаю почему его так не любят в пайтоне. Еще я юзал
+              методы exec globals,... Короче суть методов в том что я
+              использовал тогда для записи своей позиции специальный список в
+              который добовлял или удалял индексы вхождение в меню и потом я
+              вытягивал эти индексы и строил своее меню... Охххх то было... Но
+              недавно мне пришла замечательная идея, я набрался опыта, в
+              алгоритмах.Я придумал нечто новое: теперь при нажатии клавиши ввод
+              мы просто вырезаем остаток меню, и помещаем его вверх наего
+              списка(стека)... Вы поняли? Это как стопка тарелок, потом когда
+              выхожу из текущего списка я его вырезаю... Все отлично работает и
+              это менее затрано..
+            </b>
+          </p>
+          <p class="text_under_screen">
+            <b
+              >А вот собственно и метод для отрисовки, ниже мы видим метод для
+              контроля клавиш меню... Кстати, при запуске программы у моего меню
+              есть переключатель, и он переключается в режим - false = меню не
+              активно. Контроль переходит под управление класса программы что
+              создается при старте.. при выходе из программы мы возращаеся в то
+              самое меню в ту самую позицию, а экзмепляр класса программы -
+              уничтожается.
+            </b>
+          </p>
+          <img src="./img/foto/menu_draw.jpg" class="screen_image" alt="" />
+          <p class="text_under_screen">
+            <b
+              >Ну и собственно забыл добавить что надо держать в узде наш
+              скакунок внтури меню, для этого я стал использовать функцию min &
+              max. Пример в js: this.menu_counter =
+              Math.max(Math.min(this.menu_counter, len), 1); На этом про меню
+              все.
+            </b>
+          </p>
+        </section>
+      </section>
+      <section class="main_section" id="main6">
+        <section class="section_colomn_flex">
+          <h1 class="font_motstserrat_h1"></h1>
+          <img src="./img/foto/menu_draw.jpg" class="screen_image" alt="" />
+          <p class="text_under_screen">
+            <b></b>
+          </p>
+        </section>
+      </section>
+      <section class="main_section" id="main7">
+        <section class="section_colomn_flex">
+          <h1 class="font_motstserrat_h1"></h1>
+          <img src="./img/foto/menu_draw.jpg" class="screen_image" alt="" />
+          <p class="text_under_screen">
+            <b></b>
+          </p>
+        </section>
+      </section>
+      <section class="main_section" id="main8">
+        <section class="section_colomn_flex">
+          <h1 class="font_motstserrat_h1"></h1>
+          <img src="./img/foto/menu_draw.jpg" class="screen_image" alt="" />
+          <p class="text_under_screen">
+            <b></b>
+          </p>
+        </section>
+      </section>
+      <section class="main_section" id="main9">
+        <section class="section_colomn_flex">
+          <h1 class="font_motstserrat_h1"></h1>
+          <img src="./img/foto/menu_draw.jpg" class="screen_image" alt="" />
+          <p class="text_under_screen">
+            <b></b>
+          </p>
+        </section>
+      </section>
     </section>
     <script src="./main_script.js" type="module"></script>
     <div class="footer">
