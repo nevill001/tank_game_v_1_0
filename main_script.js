@@ -47,13 +47,14 @@ class Main {
 }
 
 var script = new Main();
+let game_over;
 function run_canvas() {
-  script.animation_canvas = requestAnimationFrame(run_canvas);
+  game_over = requestAnimationFrame(run_canvas);
   if (script.program) {
     script.program.update();
   }
 }
 
 function stop_canvas() {
-  cancelAnimationFrame(script.animation_canvas);
+  cancelAnimationFrame(game_over);
 }
