@@ -46,7 +46,7 @@ class Main {
   }
 }
 
-var script = new Main();
+const script = new Main();
 let game_over;
 function run_canvas() {
   game_over = requestAnimationFrame(run_canvas);
